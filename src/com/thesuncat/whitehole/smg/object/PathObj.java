@@ -51,7 +51,7 @@ public class PathObj {
         data.put("Move Stopping Type", -1);
         data.put("Rail Guide Type", -1);
         data.put("path_arg3", -1);
-        data.put("Initial POsition Type", -1);
+        data.put("Initial Position Type", -1);
         data.put("path_arg5", -1);
         data.put("path_arg6", -1);
         data.put("path_arg7", -1);
