@@ -47,11 +47,11 @@ public class PathObj {
         data.put("closed", "OPEN");
         data.put("num_pnt", 0);
         data.put("l_id", pathID);
-        data.put("path_arg0", -1);
-        data.put("path_arg1", -1);
-        data.put("path_arg2", -1);
+        data.put("Posture Type", -1);
+        data.put("Move Stopping Type", -1);
+        data.put("Rail Guide Type", -1);
         data.put("path_arg3", -1);
-        data.put("path_arg4", -1);
+        data.put("Initial POsition Type", -1);
         data.put("path_arg5", -1);
         data.put("path_arg6", -1);
         data.put("path_arg7", -1);
