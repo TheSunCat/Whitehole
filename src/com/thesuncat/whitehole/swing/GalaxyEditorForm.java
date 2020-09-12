@@ -4036,6 +4036,7 @@ public class GalaxyEditorForm extends javax.swing.JFrame {
         	if(propname.startsWith("group_rotate_angle_")) {
         		double newangle;
         		double distance; //distance on the 2 other axis
+    			addUndoEntry("changeObj", selectedObj);//required for undoing
         		switch(axis){//axis to rotate around
 	    			case "x": if(to_rotate_x!=0) {//if angele = 0 then there is noting to do
 			    				RotationMatrix a= new RotationMatrix();
@@ -4191,7 +4192,7 @@ public class GalaxyEditorForm extends javax.swing.JFrame {
 	    			default:System.out.println("Invalid axis");
 	    		}
         		rerenderTasks.add("zone:"+selectedObj.zone.zoneName);
-                glCanvas.repaint();//redraw the 
+                glCanvas.repaint();//redraw the objects
         	}
         	if(propname.startsWith("group_move_")){
         		axis = propname.substring(propname.length()-1);
@@ -4204,6 +4205,7 @@ public class GalaxyEditorForm extends javax.swing.JFrame {
         	}
         	if(propname.startsWith("groupmove")){
         		axis = propname.substring(propname.length()-1);
+    			addUndoEntry("changeObj", selectedObj);//required for undoing
         		switch(axis){
         			case "x":if(moveup) {
 		        				selectedObj.position.x+=this.g_move_x;//it only moves one step at a time
