@@ -4,7 +4,6 @@ All downloads can be found on the release page.
   
 ## Changelog:  
 - Area colors have been changed 
-- title bar changed (Whitehole v1.6 > Whitehole)
 
 **Added:**
 - *Work in progress* Obj importer
