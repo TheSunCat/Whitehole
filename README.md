@@ -13,8 +13,6 @@ All downloads can be found on the release page.
 **Bug fixes:**
 - N/A
 
-**Deleted:**
-- Deleted the object database updater since there isn't a download source anymore. But don't worry, the db is included with this download!
 
 ### Version 1.5.4
 
