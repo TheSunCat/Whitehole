@@ -12,6 +12,7 @@ All downloads can be found on the release page.
 
 **Bug Fixes:**
 - Title bar now shows "Whitehole" rather than "Whitehole v1.6.1"
+- "CollisionArea" is now a cube, as it should be
 
 
 ### Version 1.5.4
