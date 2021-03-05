@@ -3,15 +3,15 @@ Whitehole is a level editor for Super Mario Galaxy 1 and 2.
 All downloads can be found on the release page.  
   
 ## Changelog:  
-- Area colors have been changed 
+- Some area colors have been changed 
 
 **Added:**
 - *Work in progress* Obj importer
 - *Work in progress* Keybinds customizer
 - *Work in progress* Riivolution-*like* mod opener: Open a mod on top of the vanilla game files.
 
-**Bugs:**
-- Title bar shows "Whitehole" rather than "Whitehole v1.6.1"
+**Bug Fixes:**
+- Title bar now shows "Whitehole" rather than "Whitehole v1.6.1"
 
 
 ### Version 1.5.4
