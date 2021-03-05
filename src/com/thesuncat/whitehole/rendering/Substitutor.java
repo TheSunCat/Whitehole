@@ -576,7 +576,7 @@ public class Substitutor {
                         case "ChangeBgmCube": return new AreaRenderer(new Color4(0.7137254901960784f, 1f, 0f), Shape.CUBE);
                         
                         //CubeCollisionArea
-                        case "CollisionArea": return new AreaRenderer(new Color4(1f, 1f, 1f), Shape.CYLINDER);
+                        case "CollisionArea": return new AreaRenderer(new Color4(1f, 1f, 1f), Shape.CUBE);
                     }
                 }
             }
