@@ -202,7 +202,7 @@ public class BcsvEditorForm extends javax.swing.JFrame
             mnuOther.setText("その他");
             subLightData.setText("ライトデータ");
             subWorldMapCamera.setText("ワールドマップカメラ");
-            subMessageTbl.setText("Too lazy to do JPN text!");
+            subMessageTbl.setText("メッセージTBL");
     }
     
     public void bcsvOpen() {
