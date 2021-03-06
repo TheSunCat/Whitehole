@@ -104,7 +104,7 @@ public class BcsvEditorForm extends javax.swing.JFrame
         ArrayList<JMenuItem> subArray = new ArrayList<>();
         btnArray.addAll(Arrays.asList(btnAddRow, btnClear, btnDeleteRow, btnDuplicateRow, btnExport, btnOpen, btnSave)); 
         mnuArray.addAll(Arrays.asList(mnuAudio,mnuEffects,mnuFile,mnuGalaxy,mnuNPCData,mnuObjects,mnuOpen,mnuOther,mnuSystem,mnuUseResource,mnuZone));
-        subArray.addAll(Arrays.asList(subActionSound,subAstroNamePlateData,subAutoEffectList,subBgmParam,subCameraParam,subCaretaker,subChangeSceneListInfo,subClose,subExport,subGalaxyDataTable,subGalaxyInfo,subGalaxyWorldOrderList,subHeapSizeExcept,subHoneyBee,subKinopio,subKinopioBank,subLightData,subLightDataZone,subMarioFaceShipEventCastTable,subMarioFaceShipEventDataTable,subMultiBgmInfo,subObjName,subOpen,subParticleNames,subPeach,subPenguinRacer,subPenguinRacerLeader,subPlanetMapData,subProductMapObjData,subSave,subScenarioBgmInfo,subScenarioData,subSoundIdToInstList,subStageBgmInfo,subStageInfo,subTicoComet,subTicoFat,subTicoFatCoin,subTicoFatStarPiece,subTicoGalaxy,subTicoShop,subTicoShopDice,subUR1,subUR2,subUR3,subURarc1,subURarc2,subURarc3,subURarcCommon,subURcommon,subURsound1,subURsound2,subURsound3,subURsoundCommon,subWorldMapCamera,subWorldMapHeapGalaxy,subWorldMapHeapResource,subZoneInfo,subZoneList));
+        subArray.addAll(Arrays.asList(subActionSound,subAstroNamePlateData,subAutoEffectList,subBgmParam,subCameraParam,subCaretaker,subChangeSceneListInfo,subClose,subExport,subGalaxyDataTable,subGalaxyInfo,subGalaxyWorldOrderList,subHeapSizeExcept,subHoneyBee,subKinopio,subKinopioBank,subLightData,subLightDataZone,subMarioFaceShipEventCastTable,subMarioFaceShipEventDataTable,subMessageTbl,subMultiBgmInfo,subObjName,subOpen,subParticleNames,subPeach,subPenguinRacer,subPenguinRacerLeader,subPlanetMapData,subProductMapObjData,subSave,subScenarioBgmInfo,subScenarioData,subSoundIdToInstList,subStageBgmInfo,subStageInfo,subTicoComet,subTicoFat,subTicoFatCoin,subTicoFatStarPiece,subTicoGalaxy,subTicoShop,subTicoShopDice,subUR1,subUR2,subUR3,subURarc1,subURarc2,subURarc3,subURarcCommon,subURcommon,subURsound1,subURsound2,subURsound3,subURsoundCommon,subWorldMapCamera,subWorldMapHeapGalaxy,subWorldMapHeapResource,subZoneInfo,subZoneList));
         menubar.setBackground(new Color(47,49,54));
         menubar.setBorder(null);
         menubar.setOpaque(true);
@@ -202,6 +202,7 @@ public class BcsvEditorForm extends javax.swing.JFrame
             mnuOther.setText("その他");
             subLightData.setText("ライトデータ");
             subWorldMapCamera.setText("ワールドマップカメラ");
+            subMessageTbl.setText("Too lazy to do JPN text!");
     }
     
     public void bcsvOpen() {
@@ -465,6 +466,7 @@ public class BcsvEditorForm extends javax.swing.JFrame
         mnuOther = new javax.swing.JMenu();
         subLightData = new javax.swing.JMenuItem();
         subWorldMapCamera = new javax.swing.JMenuItem();
+        subMessageTbl = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BCSV editor");
@@ -1118,7 +1120,17 @@ public class BcsvEditorForm extends javax.swing.JFrame
                 subWorldMapCameraActionPerformed(evt);
             }
         });
+        mnuOther.add(subMessageTbl);
+
+        subMessageTbl.setText("Message ID Table");
+        subMessageTbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMessageTblActionPerformed(evt);
+            }
+        });
         mnuOther.add(subWorldMapCamera);
+
+        mnuOther.add(subMessageTbl);
 
         mnuOpen.add(mnuOther);
 
@@ -1650,6 +1662,12 @@ public class BcsvEditorForm extends javax.swing.JFrame
         }
     }//GEN-LAST:event_subURsound3ActionPerformed
 
+    private void subMessageTblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMessageTblActionPerformed
+        tbArchiveName.setText("/UsEnglish/MessageData/Message.arc");
+        tbFileName.setText("/Message.arc/messageid.tbl");
+        bcsvOpen();
+    }//GEN-LAST:event_subMessageTblActionPerformed
+
     private FilesystemBase archive;
     private BcsvFile bcsv;
     private String zoneName;
@@ -1707,6 +1725,7 @@ public class BcsvEditorForm extends javax.swing.JFrame
     private javax.swing.JMenuItem subLightDataZone;
     private javax.swing.JMenuItem subMarioFaceShipEventCastTable;
     private javax.swing.JMenuItem subMarioFaceShipEventDataTable;
+    private javax.swing.JMenuItem subMessageTbl;
     private javax.swing.JMenuItem subMultiBgmInfo;
     private javax.swing.JMenuItem subObjName;
     private javax.swing.JMenuItem subOpen;
