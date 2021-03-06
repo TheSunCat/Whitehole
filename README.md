@@ -5,6 +5,7 @@ All downloads can be found on the release page.
 ## Changelog:  
 - Some area colors have been changed
 - "MessageID.tbl" option added in The BCSV Editor, done by Evanbowl
+- More BSCV stuff
 
 **Added:**
 - *Work in progress* Obj importer
