@@ -19,10 +19,25 @@ jobs:
       with:
         java-version: '15'
         distribution: 'adopt'
+    - name: Ant Cache
+      id: ant
+      uses: actions/cache@v2.1.6
+      with:
+        path: C:\ProgramData\chocolatey\bin\ant.exe
+        key: ${{ runner.os }}-ant
     - name: Install Apache Ant
-      run : choco install ant --acceptlicense --confirm
-    - name: Insatll cURL
-      run: choco install curl --acceptlicense --confirm
+      run: choco install ant --acceptlicense --confirm --verbose
+      shell: cmd
+    - name: Curl Cache
+      id: curl
+      uses: actions/cache@v2.1.6
+      with:
+        path: C:\ProgramData\chocolatey\bin\curl.exe
+        key: ${{ runner.os }}-curl
+    - name: Install cURL
+      if: steps.curl.outputs.cache-hit != 'true'
+      run: choco install curl --acceptlicense --confirm --verbose
+      shell: cmd
     - name: Build Whitehole
       run: Build.cmd
       shell: cmd
