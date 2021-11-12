@@ -18,10 +18,18 @@ jobs:
       with:
         java-version: '16'
         distribution: 'adopt'
-    - name: Build with Ant
-      shell: cmd
+    - shell: pwsh
+      working-directory: ${{ github.workspace }}
+      run: Get-ChildItem -Path .\ -Filter *.jar -Recurse -File -Name > jarfiles.txt
+    - shell: cmd
       working-directory: ${{ github.workspace }}
       run: ant -Dnb.internal.action.name=build jar
+    - shell: cmd
+      working-directory: ${{ github.workspace }}
+      run: |
+        mkdir dist\lib
+        for /F "tokens=*" %%A in (jarfiles.txt) do cp %%A dist\lib\%%~nxA
+        rm jarfiles.txt
     - shell: pwsh
       working-directory: ${{ github.workspace }}\dist
       run: Invoke-WebRequest -Uri "https://github.com/IonicPixels/Objectdb/raw/main/objectdb.xml" -OutFile objectdb.xml
