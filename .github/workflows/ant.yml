@@ -20,7 +20,7 @@ jobs:
         distribution: 'adopt'
     - name: Build with Ant
       shell: cmd
-      run: ant -f %CD%
+      run: ant -f %CD% -Dnb.internal.action.name=build jar
     - uses: actions/upload-artifact@v2.2.4
       with:
         name: Build
