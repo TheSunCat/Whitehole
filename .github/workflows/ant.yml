@@ -27,11 +27,14 @@ jobs:
     - uses: actions/upload-artifact@v2.2.4
       with:
         name: Build
-        path: ${{ github.workspace }}/dist
+        path: |
+          ${{ github.workspace }}/dist
+          ${{ github.workspace }}/dist/lib
     - if: github.ref == 'refs/heads/master'
       shell: cmd
-      working-directory: ${{ github.workspace }}/dist
       run: |
+        cd dist
+        ls
         7z a "${{ github.workspace }}/Whitehole.zip" *.* -r
     - if: github.ref == 'refs/heads/master'
       uses: "marvinpinto/action-automatic-releases@latest"
