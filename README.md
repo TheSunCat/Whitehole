@@ -1,3 +1,5 @@
+[![Java CI](https://github.com/IonicPixels/Whitehole/actions/workflows/ant.yml/badge.svg)](https://github.com/IonicPixels/Whitehole/actions/workflows/ant.yml)
+
 # Whitehole is to be superseded by Takochu: a new editor developed by shibboleet.
 I will not provide support for Whitehole (besides critical bugfixes), and this repository will be archived once Takochu is stable. 
 # Takochu is in development at https://github.com/shibbo/Takochu
