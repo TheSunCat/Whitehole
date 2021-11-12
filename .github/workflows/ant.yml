@@ -26,7 +26,7 @@ jobs:
     - shell: cmd
       run: |
         mkdir dist\lib
-        for /F "tokens=*" %A in (jarfiles.txt) do cp lib\%A dist\lib\%~nA
+        for /F "tokens=*" %%A in (jarfiles.txt) do cp lib\%%A dist\lib\%%~nxA
         rm jarfiles.txt
     - uses: actions/upload-artifact@v2.2.4
       with:
