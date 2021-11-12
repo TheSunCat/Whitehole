@@ -28,8 +28,24 @@ jobs:
         mkdir dist\lib
         for /F "tokens=*" %%A in (jarfiles.txt) do cp lib\%%A dist\lib\%%~nxA
         rm jarfiles.txt
+    - shell: pwsh
+      working-directory: ${{ github.workspace }}\dist
+      run: Invoke-WebRequest -Uri "https://github.com/IonicPixels/Objectdb/raw/main/objectdb.xml" -OutFile objectdb.xml
     - uses: actions/upload-artifact@v2.2.4
       with:
         name: Build
         path: |
           ${{ github.workspace }}/dist
+    - if: github.ref == 'refs/heads/master'
+      shell: cmd
+      working-directory: ${{ github.workspace }}\dist
+      run: 7z a "${{ github.workspace }}\Whitehole.zip" *.* -r
+    - if: github.ref == 'refs/heads/master'
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "Auto"
+          prerelease: true
+          title: "Auto Build"
+          files: |
+            *.zip
