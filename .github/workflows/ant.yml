@@ -23,9 +23,13 @@ jobs:
       run: ant -f %CD% -Dnb.internal.action.name=build jar
     - shell: pwsh
       run: Get-ChildItem -Path .\lib -Filter *.jar -Recurse -File -Name > jarfiles.txt
+    - shell: cmd
+      run: |
+        mkdir dist\lib
+        for /F "tokens=*" %A in (jarfiles.txt) do cp lib\%A dist\lib\%~nxA
+        rm jarfiles.txt
     - uses: actions/upload-artifact@v2.2.4
       with:
         name: Build
         path: |
           ${{ github.workspace }}/dist
-          jarfiles.txt
