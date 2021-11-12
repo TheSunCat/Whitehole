@@ -16,7 +16,7 @@ jobs:
     - name: Set up JDK 8
       uses: actions/setup-java@v2
       with:
-        java-version: '8'
+        java-version: '16'
         distribution: 'adopt'
     - name: Build with Ant
       shell: cmd
@@ -29,11 +29,10 @@ jobs:
         name: Build
         path: |
           ${{ github.workspace }}/dist
-          ${{ github.workspace }}/dist/lib
     - if: github.ref == 'refs/heads/master'
       shell: cmd
+      working-directory: ${{ github.workspace }}/dist
       run: |
-        cd dist
         ls
         7z a "${{ github.workspace }}/Whitehole.zip" *.* -r
     - if: github.ref == 'refs/heads/master'
