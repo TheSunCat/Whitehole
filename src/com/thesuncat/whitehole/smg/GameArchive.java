@@ -26,9 +26,9 @@ public class GameArchive {
     }
     
     public void getGameType(String name) {
-        if (filesystem.fileExists(String.format("/StageData/%1$s.arc", name)))
+        if (filesystem.fileExists("/StageData/ObjNameTable.arc"))
             Whitehole.gameType = 1;   // SMG1
-        else if (filesystem.fileExists(String.format("/StageData/%1$s/%1$sMap.arc", name)))
+        else if (filesystem.fileExists("/SystemData/ObjNameTable.arc"))
             Whitehole.gameType = 2;   // SMG2
         else
             Whitehole.gameType = 0;   // no game detected
